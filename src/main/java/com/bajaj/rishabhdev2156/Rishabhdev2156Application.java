@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.context.annotation.Profile;
+
 import java.util.Map;
 
 @SpringBootApplication
@@ -24,6 +26,7 @@ public class Rishabhdev2156Application {
 }
 
 @Component
+@Profile("!test")
 class WebhookClient implements CommandLineRunner {
 
 	private final RestTemplate restTemplate;
